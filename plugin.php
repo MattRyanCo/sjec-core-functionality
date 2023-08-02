@@ -16,17 +16,52 @@
  *
  */
 
-namespace capweb;
+// namespace capweb;
 
 // Plugin Directory
-define( 'CORE_DIR', dirname( __FILE__ ) );
+define( 'CORE_FUNCTIONALITY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
+if( ! class_exists( 'Gamajo_Template_Loader' ) ) {
+	require CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-gamajo-template-loader.php';
+}
+require CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-sjec-core-functionality-template-loader.php';
 
 // Taxonomies
-include_once( CORE_DIR . '/lib/functions/taxonomies.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/taxonomies.php' );
 
 // General
-include_once( CORE_DIR . '/lib/functions/general.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/general.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/helper-functions.php' );
 
 // Post Types
-include_once( CORE_DIR . '/lib/functions/post-types.php' );
-include_once( CORE_DIR . '/inc/functions/sermon-cpt.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/post-types.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/sermon-cpt.php' );
+
+function sjec_core_functionality_sample_shortcode() {
+
+	$templates = new Sjec_Core_Functionality_Template_Loader;
+
+	// Templates will be loaded here
+	ob_start();
+	$templates->get_template_part( 'single', 'sermons' );
+	$templates->get_template_part( 'archive', 'sermons' );
+	return ob_get_clean();
+
+}
+add_shortcode( 'sjec_sample', 'sjec_core_functionality_sample_shortcode' );
+
+// $sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
+
+function display_sermon() {
+	$sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
+
+	if ( 'sermons' === get_post_type() ) {
+		if (get_post_type_object( get_post_type() )->has_archive ) {
+			$sjec_core_functionality_template_loader->get_template_part( 'archive', 'sermons' );
+		} else { //single post
+			$sjec_core_functionality_template_loader->get_template_part( 'single', 'sermons' );
+		}
+	}
+}
+add_action("kadence_single_before_entry_content", "display_sermon");
+

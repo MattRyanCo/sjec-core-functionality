@@ -40,7 +40,7 @@ function cptui_register_my_cpts_sermons() {
 	$args = array(
 		"label" => __( 'Sermons', '' ),
 		"labels" => $labels,
-		"description" => "CPT to display sermons",
+		"description" => "Sermon Custom Posts",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
@@ -55,7 +55,7 @@ function cptui_register_my_cpts_sermons() {
 		"rewrite" => array( "slug" => "sermons", "with_front" => true ),
 		"query_var" => true,
 		"menu_icon" => "dashicons-megaphone",
-		"supports" => array( "title", "editor", "thumbnail", "author" ),		
+		"supports" => array( "title", "editor", "thumbnail", "author", "custom-fields" ),
 		"taxonomies" => array( "category", "post_tag" ),
 			);
 	register_post_type( "sermons", $args );
@@ -63,4 +63,4 @@ function cptui_register_my_cpts_sermons() {
 // End of cptui_register_my_cpts_sermons()
 }
 
-add_action( 'init', 'cptui_register_my_cpts_sermons' );	
+add_action( 'init', 'cptui_register_my_cpts_sermons' );

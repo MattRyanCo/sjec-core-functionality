@@ -11,7 +11,7 @@
  */
 
 
-namespace capweb;
+//namespace capweb;
 
 /**
  * Remove Menu Items
@@ -32,7 +32,7 @@ function remove_menus () {
 		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
 	}
 }
-add_action( 'admin_menu', 'capweb\remove_menus' );
+add_action( 'admin_menu', 'remove_menus' );
 
 /**
  * Customize Admin Bar Items
@@ -43,7 +43,7 @@ function admin_bar_items() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu( 'new-link', 'new-content' );
 }
-add_action( 'wp_before_admin_bar_render', 'capweb\admin_bar_items' );
+add_action( 'wp_before_admin_bar_render', 'admin_bar_items' );
 
 
 /**
@@ -64,12 +64,12 @@ function custom_menu_order( $menu_ord ) {
 		'upload.php', // the media manager
     );
 }
-add_filter( 'custom_menu_order', 'capweb\custom_menu_order' );
-add_filter( 'menu_order', 'capweb\custom_menu_order' );
+add_filter( 'custom_menu_order', 'custom_menu_order' );
+add_filter( 'menu_order', 'custom_menu_order' );
 
 //
 // Enqueue needed scripts
-add_action( 'wp_enqueue_scripts', 'capweb\enqueue_needed_scripts' );
+add_action( 'wp_enqueue_scripts', 'enqueue_needed_scripts' );
 function enqueue_needed_scripts() {
   wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
   // wp_enqueue_script( 'cws-retina', get_bloginfo( 'stylesheet_directory' ) . '/js/retina.min.js', array( 'jquery' ), '1.0.0' );
