@@ -3,7 +3,7 @@
  * Plugin Name: Core Functionality for stjameschurch.ws
  * Plugin URI: https://github.com/billerickson/Core-Functionality
  * Description: This contains all your site's core functionality so that it is theme independent. Customized by capwebsolutions.com.
- * Version: 1.2.0
+ * Version: 2.0.0
  * Author: Cap Web Solutions
  * Author URI: https://capwebsolutions.com
  *
