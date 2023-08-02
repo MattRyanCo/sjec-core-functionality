@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Core Functionality for stjameschurch.ws
- * Plugin URI: https://github.com/billerickson/Core-Functionality
+ * Plugin URI: https://github.com/MattRyanCo/sjec-core-functionality
  * Description: This contains all your site's core functionality so that it is theme independent. Customized by capwebsolutions.com.
  * Version: 2.0.0
  * Author: Cap Web Solutions
@@ -16,23 +16,17 @@
  *
  */
 
-// Plugin Directory
-define( 'BE_DIR', dirname( __FILE__ ) );
+namespace capweb;
 
-// Post Types
-include_once( BE_DIR . '/lib/functions/post-types.php' );
+// Plugin Directory
+define( 'CORE_DIR', dirname( __FILE__ ) );
 
 // Taxonomies
-include_once( BE_DIR . '/lib/functions/taxonomies.php' );
-
-// Metaboxes
-//include_once( BE_DIR . '/lib/functions/metaboxes.php' );
-
-// Widgets
-//include_once( BE_DIR . '/lib/widgets/widget-social.php' );
-
-// Editor Style Refresh
-include_once( BE_DIR . '/lib/functions/editor-style-refresh.php' );
+include_once( CORE_DIR . '/lib/functions/taxonomies.php' );
 
 // General
-include_once( BE_DIR . '/lib/functions/general.php' );
+include_once( CORE_DIR . '/lib/functions/general.php' );
+
+// Post Types
+include_once( CORE_DIR . '/lib/functions/post-types.php' );
+include_once( CORE_DIR . '/inc/functions/sermon-cpt.php' );
