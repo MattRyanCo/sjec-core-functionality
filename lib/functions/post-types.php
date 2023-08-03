@@ -62,5 +62,51 @@ function cptui_register_my_cpts_sermons() {
 
 // End of cptui_register_my_cpts_sermons()
 }
+function cptui_register_my_cpts_steeple_notes() {
+	$labels = array(
+		"name" => __( 'Steeple Notes', '' ),
+		"singular_name" => __( 'Steeple Notes', '' ),
+		"menu_name" => __( 'Steeple Notes', '' ),
+		"all_items" => __( 'All Steeple Notes', '' ),
+		"add_new" => __( 'Add Steeple Notes Editon', '' ),
+		"add_new_item" => __( 'Add Steeple Notes Editon', '' ),
+		"edit_item" => __( 'Edit Steeple Notes', '' ),
+		"new_item" => __( 'New Steeple Notes', '' ),
+		"view_item" => __( 'View Steeple Notes', '' ),
+		"search_items" => __( 'Search Steeple Notes', '' ),
+		"not_found" => __( 'No Steeple Notes Found', '' ),
+		"not_found_in_trash" => __( 'No Steeple Notes Found In Trash', '' ),
+		"parent_item_colon" => __( 'Parent Steeple Notes', '' ),
+		"archives" => __( 'Steeple Notes Archives', '' ),
+		"insert_into_item" => __( 'Insert into Steeple Notes', '' ),
+		"filter_items_list" => __( 'Filter Steeple Notes List', '' ),
+		"items_list" => __( 'Steeple Notes List', '' ),
+		"parent_item_colon" => __( 'Parent Steeple Notes', '' ),
+		);
 
+	$args = array(
+		"label" => __( 'Steeple Notes', '' ),
+		"labels" => $labels,
+		"description" => "Parish Newsletter",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "steeple-notes", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-media-document",
+		"supports" => array( "title", "custom-fields" ),
+		);
+	register_post_type( "steeple-notes", $args );
+
+// End of cptui_register_my_cpts_sermons()
+}
 add_action( 'init', 'cptui_register_my_cpts_sermons' );
+add_action( 'init', 'cptui_register_my_cpts_steeple_notes' );
