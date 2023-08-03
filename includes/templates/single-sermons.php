@@ -4,8 +4,8 @@
 <article id="post-<?php the_ID(); ?>" >
 	<div class="entry-content-wrap">
 		<?php get_header(); ?>
-		<?php capweb\display_custom_sermon_fields(); ?>
-		<?php capweb\add_sermon_buttons(); ?>
+		<?php display_custom_sermon_fields(); ?>
+		<?php add_sermon_buttons(); ?>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
 
