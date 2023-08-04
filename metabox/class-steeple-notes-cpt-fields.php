@@ -32,9 +32,10 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
                 'id'   => 'pubdate',
                 'type' => 'date',
 				'js_options' => [
-					'dateFormat'      => 'yy-mm-dd',
+					'dateFormat'      => 'mm-dd-yy',
 					'showButtonPanel' => false,
 				],
+				'save-format' => 'Y-m-d',
 				'inline'    => false,
 				'timestamp' => false,
             ]
