@@ -6,7 +6,7 @@
 function add_custom_meta_boxes() {
     add_meta_box('wp_custom_pdf_attachment', 'Steeple Notes Media', 'wp_custom_pdf_attachment', 'steeple-notes', 'normal', 'high');
 }
-add_action('add_meta_boxes', 'add_custom_meta_boxes');
+// add_action('add_meta_boxes', 'add_custom_meta_boxes');
 
 function wp_custom_pdf_attachment() {
     wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_pdf_attachment_nonce');
@@ -17,7 +17,7 @@ function wp_custom_pdf_attachment() {
     echo $html;
 }
 
-add_action('save_post', 'save_custom_meta_data');
+// add_action('save_post', 'save_custom_meta_data');
 function save_custom_meta_data($id) {
     if(!empty($_FILES['wp_custom_pdf_attachment']['name'])) {
         $supported_types = array('application/pdf');
@@ -41,4 +41,4 @@ function save_custom_meta_data($id) {
 function update_edit_form() {
     echo ' enctype="multipart/form-data"';
 }
-add_action('post_edit_form_tag', 'update_edit_form');
+// add_action('post_edit_form_tag', 'update_edit_form');

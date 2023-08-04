@@ -1,25 +1,21 @@
-<div id="pw-header">
-	<p>This is the single Steeple Notes template.</p>
-</div>
-<?php $post_id = '13851';?>
-<article id="post-<?php the_ID(); ?>" >
+<?php
+/**
+ * Template part for displaying single Steeple Notes post content
+ */
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content-wrap">
-		<?php get_header(); ?>
-		<?php echo get_field( 'wp_custom_pdf_attachment', $post_id ); ?>
-		<?php $steeple_notes = get_post_meta( $post_id, 'wp_custom_pdf_attachment', true ); ?>
-		<?php
-		error_log( print_r( (object)
-			[
-				'file' => __FILE__,
-				'method' => __METHOD__,
-				'line' => __LINE__,
-				'dump' => [
-					$post_id, $steeple_notes,
-				],
-			], true ) );
-			?>
-		<?php $steeple_notes['url']; ?>
+        <div class="entry-content">
+			<p>
+				<?php
+				echo wp_sprintf(
+					"Title: %s | Published %s<br><a href='%s'>Click to view/right click to save</a>",
+					rwmb_the_value( 'pubtitle'),
+					rwmb_the_value( 'pubdate'),
+					rwmb_meta( 'pubfile')
+				);
+				?>
+			</p>
+        </div>
 	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
-
-
+</article>

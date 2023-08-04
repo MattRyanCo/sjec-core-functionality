@@ -36,6 +36,13 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/helper-functions.p
 // Post Types
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/post-types.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/sermon-cpt.php' );
+// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/steeple-notes-cpt.php' );
+
+// TGMPA library and related for Metabox.io
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/metabox/example.php' );
+require CORE_FUNCTIONALITY_PLUGIN_DIR . '/metabox/class-steeple-notes-cpt-fields.php';
+
+require 'vendor/autoload.php';
 
 function sjec_core_functionality_sample_shortcode() {
 
@@ -65,3 +72,15 @@ function display_sermon() {
 }
 add_action("kadence_single_before_entry_content", "display_sermon");
 
+function display_steeple_notes() {
+	$sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
+
+	if ( 'steeple-notes' === get_post_type() ) {
+		if (get_post_type_object( get_post_type() )->has_archive ) {
+			$sjec_core_functionality_template_loader->get_template_part( 'single', 'steeple-notes' );
+		} else { //single post
+			$sjec_core_functionality_template_loader->get_template_part( 'single', 'steeple-notes' );
+		}
+	}
+}
+add_action("kadence_single_before_entry_content", "display_steeple_notes");
