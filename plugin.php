@@ -27,20 +27,24 @@ if( ! class_exists( 'Gamajo_Template_Loader' ) ) {
 require CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-sjec-core-functionality-template-loader.php';
 
 // Taxonomies
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/taxonomies.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/taxonomies.php' );
 
 // General
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/general.php' );
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/helper-functions.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/general.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/helper-functions.php' );
 
 // Post Types
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/post-types.php' );
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/sermon-cpt.php' );
-// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/lib/functions/steeple-notes-cpt.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-cpt.php' );
+// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/steeple-notes-cpt.php' );
 
 // TGMPA library and related for Metabox.io
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . '/metabox/example.php' );
-require CORE_FUNCTIONALITY_PLUGIN_DIR . '/metabox/class-steeple-notes-cpt-fields.php';
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/example.php' );
+require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/class-steeple-notes-cpt-fields.php';
+
+// Import media library to CPT
+// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-steeple-notes-creator.php' );
+
 
 require 'vendor/autoload.php';
 
@@ -85,4 +89,4 @@ function display_steeple_notes() {
 		}
 	}
 }
-add_action("kadence_before_main_content", "display_steeple_notes");
+// add_action("kadence_before_main_content", "display_steeple_notes");
