@@ -57,13 +57,14 @@ function sjec_core_functionality_sample_shortcode() {
 }
 add_shortcode( 'sjec_sample', 'sjec_core_functionality_sample_shortcode' );
 
+// Moved to functions.
 // $sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
 
 function display_sermon() {
 	$sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
 
 	if ( 'sermons' === get_post_type() ) {
-		if (get_post_type_object( get_post_type() )->has_archive ) {
+		if ( is_post_type_archive( 'sermons' ) ) {
 			$sjec_core_functionality_template_loader->get_template_part( 'archive', 'sermons' );
 		} else { //single post
 			$sjec_core_functionality_template_loader->get_template_part( 'single', 'sermons' );
@@ -76,11 +77,12 @@ function display_steeple_notes() {
 	$sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
 
 	if ( 'steeple-notes' === get_post_type() ) {
-		if (get_post_type_object( get_post_type() )->has_archive ) {
-			$sjec_core_functionality_template_loader->get_template_part( 'single', 'steeple-notes' );
-		} else { //single post
+		if ( is_post_type_archive( 'steeple-notes' ) ) {
+			$sjec_core_functionality_template_loader->get_template_part( 'archive', 'steeple-notes' );
+
+		} else {
 			$sjec_core_functionality_template_loader->get_template_part( 'single', 'steeple-notes' );
 		}
 	}
 }
-add_action("kadence_single_before_entry_content", "display_steeple_notes");
+add_action("kadence_before_main_content", "display_steeple_notes");
