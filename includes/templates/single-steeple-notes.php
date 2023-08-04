@@ -3,9 +3,6 @@
  * Template part for displaying single Steeple Notes post content
  */
 ?>
-<div id="pw-header">
-	<p>This is the single steeple notes template.</p>
-</div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content-wrap">
         <div class="entry-content">
