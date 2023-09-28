@@ -5,7 +5,7 @@
 
 add_filter( 'pre_get_posts', 'modify_steeple_notes_query' );
 function modify_steeple_notes_query( $wp_query ) {
-  if(is_tax('movie-category')){
+  if(is_tax('category')){
     if( $wp_query->query_vars['post_type'] != 'steeple-notes' ) return;
     $wp_query->query_vars['posts_per_page'] = 12;
   }
@@ -33,6 +33,12 @@ function steeple_notes_archive() {
 			$pubtitle = rwmb_meta( 'pubtitle');
 			$pubdate = rwmb_get_value( 'pubdate');
 			// $pubfile = rwmb_get_value( 'pubfile');
+			// Set Default thumbnail if none provided
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail();
+				} else { ?>
+				<img src="<?php bloginfo('template_directory'); ?>/wp-content/uploads/2016/03/Steeple-Notes.jpg" alt="<?php the_title(); ?>" />
+				<?php } 
 			?>
 			<article class="entry content-bg loop-entry post-13851 steeple-notes type-steeple-notes status-publish hentry">
 				<div class="entry-content-wrap">

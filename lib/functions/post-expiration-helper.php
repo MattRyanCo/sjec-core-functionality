@@ -30,16 +30,17 @@
      *   'category' => $categoryId,
      *   'categoryTaxonomy' => $taxonomyName
      */
+    $id = get_the_ID();
     $options   = [
         'expireType' => 'category-add',
-        'id'         => $postId,
+        'id'         => $id,
 		'category'	 => 'stop-display',
     ];
     $postId    = 16272;
     $timestamp = date('U', strtotime('2024-09-15 10:00:00'));
     do_action(
         'publishpressfuture_schedule_expiration',
-        $postId,
+        $id,
         $timestamp,
         $options
     );
