@@ -69,12 +69,9 @@ add_filter( 'menu_order', 'custom_menu_order' );
 
 //
 // Enqueue needed scripts
-add_action( 'wp_enqueue_scripts', 'enqueue_needed_scripts' );
+// add_action( 'wp_enqueue_scripts', 'enqueue_needed_scripts' );
 function enqueue_needed_scripts() {
   wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
-  // wp_enqueue_script( 'cws-retina', get_bloginfo( 'stylesheet_directory' ) . '/js/retina.min.js', array( 'jquery' ), '1.0.0' );
-  // REf: http://briangardner.com/optimize-images-retina-display/
-  wp_enqueue_script( 'cws-retina', plugins_url('/js/retina.min.js', 'capweb_DIR'), array( 'jquery' ), '1.0.0' );
 }
 
 
@@ -120,3 +117,12 @@ function capweb_set_image_meta_upon_image_upload( $post_ID ) {
  
 	} 
 }
+
+// Hide subscribe box on all event pages.
+add_filter( 'tec_views_v2_subscribe_links', 
+  function( $subscribe_links ) { 
+    // When passed an empty array, the template will bail and not display. 
+    return []; 
+    }, 
+  100 
+);
