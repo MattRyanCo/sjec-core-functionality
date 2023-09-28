@@ -4,7 +4,7 @@
  *
  * This file registers any custom post types
  *
- * @package      Core_Functionality
+ * @package      SJEC_Core_Functionality
  * @since        1.0.0
  * @link         https://github.com/billerickson/Core-Functionality
  * @author       Bill Erickson <bill@billerickson.net>
@@ -40,7 +40,7 @@ function cptui_register_my_cpts_sermons() {
 	$args = array(
 		"label" => __( 'Sermons', '' ),
 		"labels" => $labels,
-		"description" => "CPT to display sermons",
+		"description" => "Sermon Custom Posts",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
@@ -55,12 +55,59 @@ function cptui_register_my_cpts_sermons() {
 		"rewrite" => array( "slug" => "sermons", "with_front" => true ),
 		"query_var" => true,
 		"menu_icon" => "dashicons-megaphone",
-		"supports" => array( "title", "editor", "thumbnail", "author" ),		
+		"supports" => array( "title", "editor", "thumbnail", "author", "custom-fields" ),
 		"taxonomies" => array( "category", "post_tag" ),
 			);
 	register_post_type( "sermons", $args );
 
 // End of cptui_register_my_cpts_sermons()
 }
+function cptui_register_my_cpts_steeple_notes() {
+	$labels = array(
+		"name" => __( 'Steeple Notes', '' ),
+		"singular_name" => __( 'Steeple Notes', '' ),
+		"menu_name" => __( 'Steeple Notes', '' ),
+		"all_items" => __( 'All Steeple Notes', '' ),
+		"add_new" => __( 'Add Steeple Notes Editon', '' ),
+		"add_new_item" => __( 'Add Steeple Notes Editon', '' ),
+		"edit_item" => __( 'Edit Steeple Notes', '' ),
+		"new_item" => __( 'New Steeple Notes', '' ),
+		"view_item" => __( 'View Steeple Notes', '' ),
+		"search_items" => __( 'Search Steeple Notes', '' ),
+		"not_found" => __( 'No Steeple Notes Found', '' ),
+		"not_found_in_trash" => __( 'No Steeple Notes Found In Trash', '' ),
+		"parent_item_colon" => __( 'Parent Steeple Notes', '' ),
+		"archives" => __( 'Steeple Notes Archives', '' ),
+		"insert_into_item" => __( 'Insert into Steeple Notes', '' ),
+		"filter_items_list" => __( 'Filter Steeple Notes List', '' ),
+		"items_list" => __( 'Steeple Notes List', '' ),
+		"parent_item_colon" => __( 'Parent Steeple Notes', '' ),
+		);
 
-add_action( 'init', 'cptui_register_my_cpts_sermons' );	
+	$args = array(
+		// "label" => __( 'Steeple Notes', '' ),
+		"labels" => $labels,
+		// "description" => "Parish Newsletter",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		// "map_meta_cap" => true,
+		// "hierarchical" => false,
+		"rewrite" => array( "slug" => "steeple-notes", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-media-document",
+		"supports" => array( 'title', 'thumbnail' ),
+		"taxonomies" => array( "category", "post_tag" ),
+		);
+	register_post_type( "steeple-notes", $args );
+
+// End of cptui_register_my_cpts_sermons()
+}
+add_action( 'init', 'cptui_register_my_cpts_sermons' );
+add_action( 'init', 'cptui_register_my_cpts_steeple_notes' );
