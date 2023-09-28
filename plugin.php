@@ -38,7 +38,6 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/last-login.php' );
 // Post Types
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-cpt.php' );
-// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/steeple-notes-cpt.php' );
 
 // TGMPA library and related for Metabox.io
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/example.php' );
