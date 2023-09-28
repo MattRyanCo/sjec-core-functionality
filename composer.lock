@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33f18b0b548b3003bad334ee44255401",
+    "content-hash": "40cca098f261388e9837d7c7a0baf4d4",
     "packages": [
         {
             "name": "composer/installers",
@@ -194,18 +194,6 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "meta-box/mb-frontend-submission",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-frontend-submission&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
             "name": "meta-box/mb-revision",
             "version": "master",
             "dist": {
@@ -223,42 +211,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://metabox.io/?action=download&product=mb-settings-page&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "meta-box/mb-term-meta",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-term-meta&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "meta-box/mb-user-meta",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-user-meta&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "meta-box/mb-user-profile",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-user-profile&api_key=b9b31f222017793574eb84f700422e1b"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -314,54 +266,6 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "meta-box/meta-box-geolocation",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-geolocation&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "meta-box/meta-box-group",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-group&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "meta-box/meta-box-include-exclude",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-include-exclude&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "meta-box/meta-box-show-hide",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-show-hide&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
             "name": "meta-box/meta-box-tabs",
             "version": "master",
             "dist": {
@@ -379,18 +283,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://metabox.io/?action=download&product=meta-box-template&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "meta-box/meta-box-tooltip",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-tooltip&api_key=b9b31f222017793574eb84f700422e1b"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -436,35 +328,16 @@
             "time": "2023-07-18T03:24:00+00:00"
         },
         {
-            "name": "wpackagist-plugin/mb-elementor-integrator",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/mb-elementor-integrator/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mb-elementor-integrator.zip?timestamp=1689650494"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/mb-elementor-integrator/",
-            "time": "2023-07-18T03:21:34+00:00"
-        },
-        {
             "name": "wpackagist-plugin/mb-relationships",
-            "version": "1.11.1",
+            "version": "1.11.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/mb-relationships/",
-                "reference": "tags/1.11.1"
+                "reference": "tags/1.11.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mb-relationships.1.11.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/mb-relationships.1.11.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -482,89 +355,32 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mb-rest-api.zip?timestamp=1659053680"
+                "url": "https://downloads.wordpress.org/plugin/mb-rest-api.zip?timestamp=1692164329"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/mb-rest-api/",
-            "time": "2022-07-29T00:14:40+00:00"
+            "time": "2023-08-16T05:38:49+00:00"
         },
         {
             "name": "wpackagist-plugin/meta-box",
-            "version": "5.7.4",
+            "version": "5.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/meta-box/",
-                "reference": "tags/5.7.4"
+                "reference": "tags/5.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box.5.7.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/meta-box.5.8.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/meta-box/"
-        },
-        {
-            "name": "wpackagist-plugin/meta-box-beaver-themer-integrator",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/meta-box-beaver-themer-integrator/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box-beaver-themer-integrator.zip?timestamp=1680512253"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/meta-box-beaver-themer-integrator/",
-            "time": "2023-04-03T08:57:33+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/meta-box-facetwp-integrator",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/meta-box-facetwp-integrator/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box-facetwp-integrator.zip?timestamp=1686961748"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/meta-box-facetwp-integrator/",
-            "time": "2023-06-17T00:29:08+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/meta-box-text-limiter",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/meta-box-text-limiter/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box-text-limiter.zip?timestamp=1619257884"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/meta-box-text-limiter/",
-            "time": "2021-04-24T09:51:24+00:00"
         },
         {
             "name": "wpackagist-plugin/meta-box-yoast-seo",
@@ -592,36 +408,23 @@
     "stability-flags": {
         "wpackagist-plugin/mb-comment-meta": 20,
         "wpackagist-plugin/mb-custom-post-type": 20,
-        "wpackagist-plugin/mb-elementor-integrator": 20,
         "wpackagist-plugin/mb-rest-api": 20,
-        "wpackagist-plugin/meta-box-beaver-themer-integrator": 20,
-        "wpackagist-plugin/meta-box-facetwp-integrator": 20,
-        "wpackagist-plugin/meta-box-text-limiter": 20,
         "wpackagist-plugin/meta-box-yoast-seo": 20,
         "meta-box/mb-admin-columns": 20,
         "meta-box/mb-blocks": 20,
         "meta-box/mb-custom-table": 20,
-        "meta-box/mb-frontend-submission": 20,
         "meta-box/mb-revision": 20,
         "meta-box/mb-settings-page": 20,
-        "meta-box/mb-term-meta": 20,
-        "meta-box/mb-user-meta": 20,
-        "meta-box/mb-user-profile": 20,
         "meta-box/meta-box-aio": 20,
         "meta-box/meta-box-builder": 20,
         "meta-box/meta-box-columns": 20,
         "meta-box/meta-box-conditional-logic": 20,
-        "meta-box/meta-box-geolocation": 20,
-        "meta-box/meta-box-group": 20,
-        "meta-box/meta-box-include-exclude": 20,
-        "meta-box/meta-box-show-hide": 20,
         "meta-box/meta-box-tabs": 20,
-        "meta-box/meta-box-template": 20,
-        "meta-box/meta-box-tooltip": 20
+        "meta-box/meta-box-template": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
