@@ -9,7 +9,8 @@
  * @author  Matt Ryan
  */
 
-add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
+add_filter( 'rwmb_meta_boxes', 'sjec_build_steeple_notes_metabox' );
+function sjec_build_steeple_notes_metabox( $meta_boxes ) {
     $meta_boxes[] = [
         'title'      => 'Steeple Notes Issue Details',
         'post_types' => 'steeple-notes',
@@ -46,4 +47,4 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
     // $meta_boxes[] = ...
 
     return $meta_boxes;
-} );
+}

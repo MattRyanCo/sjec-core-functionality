@@ -3,16 +3,17 @@
 //namespace capweb;
 
 function display_custom_sermon_fields() {
-	$speaker = get_field( 'speaker' );
-	$sermon_topic = get_field( 'sermon_topic' );
-	$sermon_delivery_date = get_field( 'sermon_delivery_date' );
-	$first_reading_link = get_field( 'first_reading_link' );
-	$second_reading_link = get_field( 'second_reading_link' );
-	$gospel_link = get_field( 'gospel_link' );
-	$sermon_audio_link = get_field( 'sermon_audio_link' );
-	$sermon_audio_link_new = get_field( 'sermon_audio_link_new' );
+	?><h3>Getting sermon fields</h3><?php
+	$speaker = rwmb_get_value(  'speaker' );
+	$sermon_topic = rwmb_get_value(  'sermon_topic' );
+	$sermon_delivery_date = rwmb_get_value(  'sermon_delivery_date' );
+	$first_reading_link = rwmb_get_value(  'first_reading_link' );
+	$second_reading_link = rwmb_get_value(  'second_reading_link' );
+	$gospel_link = rwmb_get_value(  'gospel_link' );
+	$sermon_audio_link = rwmb_get_value(  'sermon_audio_link' );
+	$sermon_audio_link_new = rwmb_get_value(  'sermon_audio_link_new' );
 
-	$sermon_video_link = get_field( 'sermon_video_link' );
+	$sermon_video_link = rwmb_get_value(  'sermon_video_link' );
 
 	if ( $speaker || $sermon_topic || $sermon_delivery_date || $sermon_audio_link  || $sermon_audio_link_new  || $sermon_video_link  ) {
 
@@ -63,15 +64,44 @@ function display_sermon_featured_image() {
 }
 
 function add_sermon_buttons() {
-	if ( get_field( 'sermon_audio_link' ) ) {
-		echo '<a href="' . get_field( 'sermon_audio_link' ) . '" class="post-type-archive-sermons button">Sermon Audio</a>';
+	if ( rwmb_get_value(  'sermon_audio_link' ) ) {
+		echo '<a href="' . rwmb_get_value(  'sermon_audio_link' ) . '" class="post-type-archive-sermons button">Sermon Audio</a>';
 	}
-	if ( get_field( 'sermon_audio_link_new' ) ) {
-		echo '<a href="' . get_field( 'sermon_audio_link_new' ) . '" class="post-type-archive-sermons button">Sermon Audio</a>';
+	if ( rwmb_get_value(  'sermon_audio_link_new' ) ) {
+		echo '<a href="' . rwmb_get_value(  'sermon_audio_link_new' ) . '" class="post-type-archive-sermons button">Sermon Audio</a>';
 	}
-	if ( get_field( 'sermon_video_link' ) ) {
-		echo '<a href="' . get_field( 'sermon_video_link' ) . '" class="button">Sermon Video</a>';
+	if ( rwmb_get_value(  'sermon_video_link' ) ) {
+		echo '<a href="' . rwmb_get_value(  'sermon_video_link' ) . '" class="button">Sermon Video</a>';
 	}
 
 }
 
+function display_recent_sermons() {
+    // Define the query parameters
+    $args = array(
+        'post_type' => 'sermons',
+        'posts_per_page' => -1, // Display all sermons
+        'date_query' => array(
+            'after' => '1 year ago', // Show posts published after 1 year ago
+        ),
+    );
+    // Query the posts
+    $sermon_query = new WP_Query($args);
+
+    // Check if there are any sermons
+    if ($sermon_query->have_posts()) {
+        echo '<ul>';
+        while ($sermon_query->have_posts()) {
+            $sermon_query->the_post();
+            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+            //* Display values of custom fields (those that are not empty)
+            // display_custom_sermon_fields();
+            // display_sermon_featured_image();
+            // custom_sermon_post_meta();
+        }
+        echo '</ul>';
+        wp_reset_postdata(); // Reset the post data
+    } else {
+        echo 'No sermons found.';
+    }
+}

@@ -4,7 +4,7 @@
  *
  * This file registers any custom post types
  *
- * @package      Core_Functionality
+ * @package      SJEC_Core_Functionality
  * @since        1.0.0
  * @link         https://github.com/billerickson/Core-Functionality
  * @author       Bill Erickson <bill@billerickson.net>
@@ -85,24 +85,25 @@ function cptui_register_my_cpts_steeple_notes() {
 		);
 
 	$args = array(
-		"label" => __( 'Steeple Notes', '' ),
+		// "label" => __( 'Steeple Notes', '' ),
 		"labels" => $labels,
-		"description" => "Parish Newsletter",
+		// "description" => "Parish Newsletter",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
-		"show_in_rest" => false,
+		"show_in_rest" => true,
 		"rest_base" => "",
 		"has_archive" => true,
 		"show_in_menu" => true,
 		"exclude_from_search" => false,
 		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
+		// "map_meta_cap" => true,
+		// "hierarchical" => false,
 		"rewrite" => array( "slug" => "steeple-notes", "with_front" => true ),
 		"query_var" => true,
 		"menu_icon" => "dashicons-media-document",
-		"supports" => array( "title", "custom-fields" ),
+		"supports" => array( 'title', 'thumbnail' ),
+		"taxonomies" => array( "category", "post_tag" ),
 		);
 	register_post_type( "steeple-notes", $args );
 

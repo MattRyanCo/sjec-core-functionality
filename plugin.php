@@ -22,9 +22,9 @@
 define( 'CORE_FUNCTIONALITY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 if( ! class_exists( 'Gamajo_Template_Loader' ) ) {
-	require CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-gamajo-template-loader.php';
+	require CORE_FUNCTIONALITY_PLUGIN_DIR . 'includes/class-gamajo-template-loader.php';
 }
-require CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-sjec-core-functionality-template-loader.php';
+require CORE_FUNCTIONALITY_PLUGIN_DIR . 'includes/class-sjec-core-functionality-template-loader.php';
 
 // Taxonomies
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/taxonomies.php' );
@@ -32,6 +32,8 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/taxonomies.php' );
 // General
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/general.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/helper-functions.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-expiration-helper.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/last-login.php' );
 
 // Post Types
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
@@ -41,52 +43,31 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-cpt.php' );
 // TGMPA library and related for Metabox.io
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/example.php' );
 require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/class-steeple-notes-cpt-fields.php';
+require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/class-sermons-cpt-fields.php';
 
-// Import media library to CPT
-// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-steeple-notes-creator.php' );
-
-
-require 'vendor/autoload.php';
-
-function sjec_core_functionality_sample_shortcode() {
-
-	$templates = new Sjec_Core_Functionality_Template_Loader;
-
-	// Templates will be loaded here
-	ob_start();
-	$templates->get_template_part( 'single', 'sermons' );
-	$templates->get_template_part( 'archive', 'sermons' );
-	return ob_get_clean();
-
-}
-add_shortcode( 'sjec_sample', 'sjec_core_functionality_sample_shortcode' );
-
-// Moved to functions.
-// $sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
 
 function display_sermon() {
-	$sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
+	$sjec_core_functionality_sermon_template_loader = new Sjec_Core_Functionality_Template_Loader;
 
 	if ( 'sermons' === get_post_type() ) {
 		if ( is_post_type_archive( 'sermons' ) ) {
-			$sjec_core_functionality_template_loader->get_template_part( 'archive', 'sermons' );
+			$sjec_core_functionality_sermon_template_loader->get_template_part( 'archive', 'sermons' );
 		} else { //single post
-			$sjec_core_functionality_template_loader->get_template_part( 'single', 'sermons' );
+			$sjec_core_functionality_sermon_template_loader->get_template_part( 'single', 'sermons' );
 		}
 	}
 }
-add_action("kadence_single_before_entry_content", "display_sermon");
+add_action('kadence_single_before_entry_content', 'display_sermon');
 
 function display_steeple_notes() {
-	$sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
+	$sjec_core_functionality_steeplenotes_template_loader = new Sjec_Core_Functionality_Template_Loader;
 
 	if ( 'steeple-notes' === get_post_type() ) {
 		if ( is_post_type_archive( 'steeple-notes' ) ) {
-			$sjec_core_functionality_template_loader->get_template_part( 'archive', 'steeple-notes' );
-
+			$sjec_core_functionality_steeplenotes_template_loader->get_template_part( 'archive', 'steeple-notes' );
 		} else {
-			$sjec_core_functionality_template_loader->get_template_part( 'single', 'steeple-notes' );
+			$sjec_core_functionality_steeplenotes_template_loader->get_template_part( 'single', 'steeple-notes' );
 		}
 	}
 }
-// add_action("kadence_before_main_content", "display_steeple_notes");
+add_action('kadence_single_before_entry_content', 'display_steeple_notes');
