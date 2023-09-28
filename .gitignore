@@ -3,7 +3,7 @@
 .*
 ~*
 
-# ignore node dependency directories (used by grunt)
+# ignore node dependency directories 
 node_modules/
 
 # ignore OS generated files
