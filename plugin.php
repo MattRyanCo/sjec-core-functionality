@@ -33,6 +33,7 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/taxonomies.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/general.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/helper-functions.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-expiration-helper.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/last-login.php' );
 
 // Post Types
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
@@ -44,27 +45,6 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/example.php' );
 require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/class-steeple-notes-cpt-fields.php';
 require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/class-sermons-cpt-fields.php';
 
-// Import media library to CPT
-// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'classes/class-steeple-notes-creator.php' );
-
-
-// require 'vendor/autoload.php';
-
-// function sjec_core_functionality_sample_shortcode() {
-
-// 	$templates = new Sjec_Core_Functionality_Template_Loader;
-
-// 	// Templates will be loaded here
-// 	ob_start();
-// 	$templates->get_template_part( 'single', 'sermons' );
-// 	$templates->get_template_part( 'archive', 'sermons' );
-// 	return ob_get_clean();
-
-// }
-// add_shortcode( 'sjec_sample', 'sjec_core_functionality_sample_shortcode' );
-
-// Moved to functions.
-// $sjec_core_functionality_template_loader = new Sjec_Core_Functionality_Template_Loader;
 
 function display_sermon() {
 	$sjec_core_functionality_sermon_template_loader = new Sjec_Core_Functionality_Template_Loader;
