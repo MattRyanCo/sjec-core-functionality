@@ -102,7 +102,7 @@ function cptui_register_my_cpts_steeple_notes() {
 		"rewrite" => array( "slug" => "steeple-notes", "with_front" => true ),
 		"query_var" => true,
 		"menu_icon" => "dashicons-media-document",
-		"supports" => array( 'title' ),
+		"supports" => array( 'title', 'thumbnail' ),
 		"taxonomies" => array( "category", "post_tag" ),
 		);
 	register_post_type( "steeple-notes", $args );
