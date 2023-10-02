@@ -1,6 +1,6 @@
 <?php
 /**
- * Core Functionality for stjameschurch.ws
+ * Core Functionality for sjecd.org
  * Meal Planner
  *
  * @package   SJEC_Core_Functionality
