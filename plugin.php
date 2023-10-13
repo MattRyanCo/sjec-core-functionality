@@ -36,13 +36,14 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-expiration-hel
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/last-login.php' );
 
 // Post Types
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
+// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-cpt.php' );
 
 // TGMPA library and related for Metabox.io
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/example.php' );
 require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/class-steeple-notes-cpt-fields.php';
 require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/class-sermons-cpt-fields.php';
+require CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/post-type-sermon.php';
 
 
 function display_sermon() {
