@@ -19,14 +19,16 @@ function sjec_build_steeple_notes_metabox( $meta_boxes ) {
                 'name' => 'Title of publication',
                 'id'   => 'pubtitle',
                 'type' => 'text',
+                'desc' => 'Enter title of this issue, if different from post title above.'
 			],
 			[
-                'name' => 'Steeple Notes File',
+                'name' => 'Steeple Notes Filename',
                 'id'   => 'pubfile',
                 'type' => 'file_input',
 				'max_file_uploads' => 1,
 				'mime_type'        => 'application/pdf',
 				'max_status'       => false,
+                'desc' => 'This filename can be retreived from the Media Library. Use the "Select" button to find it in the media library. Once found in the media library, use the "Copy URL" button to copy it to the clipboard and then paste that filename back here. You can also upload the issue PDF from that screen.'
             ],
 			[
                 'name' => 'Publication Date',
@@ -39,6 +41,7 @@ function sjec_build_steeple_notes_metabox( $meta_boxes ) {
 				'save-format' => 'Y-m-d',
 				'inline'    => false,
 				'timestamp' => false,
+                'desc' => 'Enter the publication date for this issue of Steeple Notes. Click into the entry box to use a date picker.'
             ]
         ],
     ];
