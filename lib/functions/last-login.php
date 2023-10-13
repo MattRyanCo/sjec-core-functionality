@@ -58,17 +58,23 @@ function capweb_sort_last_login_column( $query ) {
 		return $query;
 	}
  
-	$screen = get_current_screen();
- 
-	if( isset( $screen->base ) && $screen->base !== 'users' ) {
-		return $query;
-	}
- 
-	if( isset( $_GET[ 'orderby' ] ) && $_GET[ 'orderby' ] == 'last_login' ) {
- 
-		$query->query_vars['meta_key'] = 'last_login';
-		$query->query_vars['orderby'] = 'meta_value';
- 
+    /**
+     * Check whether the get_current_screen function exists
+     * because it is loaded only after 'admin_init' hook.
+     */
+    if ( function_exists( 'get_current_screen' ) ) {
+		$screen = get_current_screen();
+	
+		if( isset( $screen->base ) && $screen->base !== 'users' ) {
+			return $query;
+		}
+	
+		if( isset( $_GET[ 'orderby' ] ) && $_GET[ 'orderby' ] == 'last_login' ) {
+	
+			$query->query_vars['meta_key'] = 'last_login';
+			$query->query_vars['orderby'] = 'meta_value';
+	
+		}
 	}
  
   return $query;

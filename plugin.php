@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Core Functionality for stjameschurch.ws
+ * Plugin Name: Core Functionality for sjecd.org
  * Plugin URI: https://github.com/MattRyanCo/sjec-core-functionality
  * Description: This contains all your site's core functionality so that it is theme independent. Customized by capwebsolutions.com.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: Cap Web Solutions
  * Author URI: https://capwebsolutions.com
  *
@@ -38,7 +38,6 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/last-login.php' );
 // Post Types
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-cpt.php' );
-// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/steeple-notes-cpt.php' );
 
 // TGMPA library and related for Metabox.io
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/example.php' );

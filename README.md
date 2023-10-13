@@ -18,6 +18,3 @@ Details of edits:<br>
 
 # DONE!
 
-Changelog:
-
-8/24/2020 2.0 - Convert from an mu plugin to standard. Add duplicate post function.

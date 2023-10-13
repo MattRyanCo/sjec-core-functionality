@@ -200,21 +200,6 @@
             "install-path": "../meta-box/mb-custom-table"
         },
         {
-            "name": "meta-box/mb-frontend-submission",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-frontend-submission&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/mb-frontend-submission"
-        },
-        {
             "name": "meta-box/mb-revision",
             "version": "master",
             "version_normalized": "dev-master",
@@ -243,51 +228,6 @@
             "type": "wordpress-plugin",
             "installation-source": "dist",
             "install-path": "../meta-box/mb-settings-page"
-        },
-        {
-            "name": "meta-box/mb-term-meta",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-term-meta&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/mb-term-meta"
-        },
-        {
-            "name": "meta-box/mb-user-meta",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-user-meta&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/mb-user-meta"
-        },
-        {
-            "name": "meta-box/mb-user-profile",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=mb-user-profile&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/mb-user-profile"
         },
         {
             "name": "meta-box/meta-box-aio",
@@ -350,66 +290,6 @@
             "install-path": "../meta-box/meta-box-conditional-logic"
         },
         {
-            "name": "meta-box/meta-box-geolocation",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-geolocation&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/meta-box-geolocation"
-        },
-        {
-            "name": "meta-box/meta-box-group",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-group&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/meta-box-group"
-        },
-        {
-            "name": "meta-box/meta-box-include-exclude",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-include-exclude&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/meta-box-include-exclude"
-        },
-        {
-            "name": "meta-box/meta-box-show-hide",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-show-hide&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/meta-box-show-hide"
-        },
-        {
             "name": "meta-box/meta-box-tabs",
             "version": "master",
             "version_normalized": "dev-master",
@@ -438,21 +318,6 @@
             "type": "wordpress-plugin",
             "installation-source": "dist",
             "install-path": "../meta-box/meta-box-template"
-        },
-        {
-            "name": "meta-box/meta-box-tooltip",
-            "version": "master",
-            "version_normalized": "dev-master",
-            "dist": {
-                "type": "zip",
-                "url": "https://metabox.io/?action=download&product=meta-box-tooltip&api_key=b9b31f222017793574eb84f700422e1b"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "install-path": "../meta-box/meta-box-tooltip"
         },
         {
             "name": "wpackagist-plugin/mb-comment-meta",
@@ -499,39 +364,17 @@
             "install-path": "../meta-box/mb-custom-post-type"
         },
         {
-            "name": "wpackagist-plugin/mb-elementor-integrator",
-            "version": "dev-trunk",
-            "version_normalized": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/mb-elementor-integrator/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mb-elementor-integrator.zip?timestamp=1689650494"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "time": "2023-07-18T03:21:34+00:00",
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "homepage": "https://wordpress.org/plugins/mb-elementor-integrator/",
-            "install-path": "../meta-box/mb-elementor-integrator"
-        },
-        {
             "name": "wpackagist-plugin/mb-relationships",
-            "version": "1.11.1",
-            "version_normalized": "1.11.1.0",
+            "version": "1.11.2",
+            "version_normalized": "1.11.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/mb-relationships/",
-                "reference": "tags/1.11.1"
+                "reference": "tags/1.11.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mb-relationships.1.11.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/mb-relationships.1.11.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -565,16 +408,16 @@
         },
         {
             "name": "wpackagist-plugin/meta-box",
-            "version": "5.7.4",
-            "version_normalized": "5.7.4.0",
+            "version": "5.8.1",
+            "version_normalized": "5.8.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/meta-box/",
-                "reference": "tags/5.7.4"
+                "reference": "tags/5.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box.5.7.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/meta-box.5.8.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -583,72 +426,6 @@
             "installation-source": "dist",
             "homepage": "https://wordpress.org/plugins/meta-box/",
             "install-path": "../meta-box/meta-box"
-        },
-        {
-            "name": "wpackagist-plugin/meta-box-beaver-themer-integrator",
-            "version": "dev-trunk",
-            "version_normalized": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/meta-box-beaver-themer-integrator/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box-beaver-themer-integrator.zip?timestamp=1680512253"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "time": "2023-04-03T08:57:33+00:00",
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "homepage": "https://wordpress.org/plugins/meta-box-beaver-themer-integrator/",
-            "install-path": "../meta-box/meta-box-beaver-themer-integrator"
-        },
-        {
-            "name": "wpackagist-plugin/meta-box-facetwp-integrator",
-            "version": "dev-trunk",
-            "version_normalized": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/meta-box-facetwp-integrator/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box-facetwp-integrator.zip?timestamp=1686961748"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "time": "2023-06-17T00:29:08+00:00",
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "homepage": "https://wordpress.org/plugins/meta-box-facetwp-integrator/",
-            "install-path": "../meta-box/meta-box-facetwp-integrator"
-        },
-        {
-            "name": "wpackagist-plugin/meta-box-text-limiter",
-            "version": "dev-trunk",
-            "version_normalized": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/meta-box-text-limiter/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/meta-box-text-limiter.zip?timestamp=1619257884"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "time": "2021-04-24T09:51:24+00:00",
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "homepage": "https://wordpress.org/plugins/meta-box-text-limiter/",
-            "install-path": "../meta-box/meta-box-text-limiter"
         },
         {
             "name": "wpackagist-plugin/meta-box-yoast-seo",
