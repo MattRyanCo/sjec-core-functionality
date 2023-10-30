@@ -6,16 +6,15 @@
  *
  * @package      SJEC_Core_Functionality
  * @since        1.0.0
- * @link         https://github.com/billerickson/Core-Functionality
- * @author       Bill Erickson <bill@billerickson.net>
- * @copyright    Copyright (c) 2011, Bill Erickson
+ * @link         https://github.com/MattRyanCo/sjec-core-functionality
+ * @author       Matt Ryan
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
 
 
-add_action( 'init', 'cptui_register_my_cpts_sermons' );
-function cptui_register_my_cpts_sermons() {
+add_action( 'init', 'capweb_register_my_sermons_cpt' );
+function capweb_register_my_sermons_cpt() {
 	$labels = array(
 		"name" => __( 'Sermons', '' ),
 		"singular_name" => __( 'Sermon', '' ),
@@ -60,9 +59,9 @@ function cptui_register_my_cpts_sermons() {
 			);
 	register_post_type( "sermons", $args );
 
-// End of cptui_register_my_cpts_sermons()
+// End of capweb_register_my_sermons_cpt()
 }
-function cptui_register_my_cpts_steeple_notes() {
+function capweb_register_my_steeple_notes_cpt() {
 	$labels = array(
 		"name" => __( 'Steeple Notes', '' ),
 		"singular_name" => __( 'Steeple Notes', '' ),
@@ -107,7 +106,7 @@ function cptui_register_my_cpts_steeple_notes() {
 		);
 	register_post_type( "steeple-notes", $args );
 
-// End of cptui_register_my_cpts_sermons()
+// End of capweb_register_my_sermons_cpt()
 }
-add_action( 'init', 'cptui_register_my_cpts_sermons' );
-add_action( 'init', 'cptui_register_my_cpts_steeple_notes' );
+add_action( 'init', 'capweb_register_my_sermons_cpt' );
+add_action( 'init', 'capweb_register_my_steeple_notes_cpt' );

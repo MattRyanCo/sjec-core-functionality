@@ -64,7 +64,6 @@ function sjec_build_sermons_metabox( $meta_boxes ) {
                 'name' => 'Sermon Audio',
                 'id' => 'sermon_audio',
                 'type' => 'file_advanced',
-                // 'return_format' => 'url',
                 'mime_types' => 'mp3',
                 'desc' => 'Sermon audio file via media library.',
                 'max_file_uploads' => 1,

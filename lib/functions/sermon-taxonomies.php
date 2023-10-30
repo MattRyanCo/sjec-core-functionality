@@ -1,20 +1,19 @@
 <?php
 /**
- * Taxonomies
+ * Sermon Taxonomies
  *
- * This file registers any custom taxonomies
+ * This file registers custom taxonomies for Sermon Custom Post Type
  *
- * @package      Core_Functionality
+ * @package      SJEC_Core_Functionality
  * @since        1.0.0
- * @link         https://github.com/billerickson/Core-Functionality
- * @author       Bill Erickson <bill@billerickson.net>
- * @copyright    Copyright (c) 2011, Bill Erickson
+ * @link         https://github.com/MattRyanCo/sjec-core-functionality
+ * @author       Matt Ryan
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
 
-add_action( 'init', 'cptui_register_my_taxes' );
-function cptui_register_my_taxes() {
+add_action( 'init', 'capweb_register_my_sermon_taxes' );
+function capweb_register_my_sermon_taxes() {
 	$labels = array(
 		"name" => __( 'Liturgical Seasons', '' ),
 		"singular_name" => __( 'Liturgical Season', '' ),
@@ -80,8 +79,10 @@ function cptui_register_my_taxes() {
 	);
 	register_taxonomy( "series", array( "sermons" ), $args );
 
-// End cptui_register_my_taxes()
+// End capweb_register_my_taxes()
 }
 
 
-add_action( 'init', 'cptui_register_my_taxes' );
+add_action( 'init', 'capweb_register_my_sermon_taxes' );
+
+

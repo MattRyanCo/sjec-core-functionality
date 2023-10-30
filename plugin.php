@@ -26,9 +26,6 @@ if( ! class_exists( 'Gamajo_Template_Loader' ) ) {
 }
 require CORE_FUNCTIONALITY_PLUGIN_DIR . 'includes/class-sjec-core-functionality-template-loader.php';
 
-// Taxonomies
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/taxonomies.php' );
-
 // General
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/general.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/helper-functions.php' );
@@ -36,9 +33,11 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-expiration-hel
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/last-login.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/duplicate-post.php' );
 
-// Post Types
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
-include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-cpt.php' );
+// Custom Post Types
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/register-post-types.php' );
+
+// Custom Taxonomies
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-taxonomies.php' );
 
 // TGMPA library and related for Metabox.io
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'metabox/example.php' );

@@ -9,36 +9,19 @@
 	<div class="entry-content-wrap">
 		<?php get_header(); ?>
 		<?php 
-		// display_custom_sermon_fields(); 
 			$speaker = rwmb_get_value( 'speaker' );
 			$sermon_topic = rwmb_get_value(  'sermon_topic' );
 			$sermon_delivery_date = rwmb_get_value(  'sermon_delivery_date' );
 			$first_reading_link = rwmb_get_value(  'first_reading_link' );
 			$second_reading_link = rwmb_get_value(  'second_reading_link' );
 			$gospel_link = rwmb_get_value(  'gospel_link' );
-			$sermon_audio_link = rwmb_get_value(  'sermon_audio_link' );
-			$sermon_audio_link_new = rwmb_get_value(  'sermon_audio_link_new' );
-			$sermon_video_link = rwmb_get_value(  'sermon_video_link' );
 
 			$sermon_audio = rwmb_get_value(  'sermon_audio' );
 			$sermon_video = rwmb_get_value(  'sermon_video' );
 
-			
-			error_log( '$sermon_audio_link ' . var_export($sermon_audio_link , true ) );
-			error_log( print_r( (object)
-				[
-					'file' => __FILE__,
-					'method' => __METHOD__,
-					'line' => __LINE__,
-					'dump' => [
-						$sermon_audio_link, $sermon_audio_file, $first_reading_link,
-					],
-				], true ) );
-
-			if ( $speaker || $sermon_topic || $sermon_delivery_date || $sermon_audio_link  || $sermon_audio_link_new  || $sermon_video_link  ) {
+			if ( $speaker || $sermon_topic || $sermon_delivery_date || $sermon_audio  || $sermon_video  ) {
 
 				echo '<div class="sermon-meta">';
-
 					if ( $speaker ) {
 						echo '<p><strong>Speaker</strong>: ' . $speaker . '</p>';
 					}
@@ -53,24 +36,38 @@
 
 					if ( $first_reading_link || $second_reading_link || $gospel_link ) {
 						echo '<strong>Appointed Passages: </strong>' . '<br>';
-						// echo '&nbsp;&nbsp;&nbsp;First Reading: <a href=' . $first_reading_link["url"] . ' target="_blank">' . $first_reading_link["title"] . '</a><br>';
 						echo '&nbsp;&nbsp;&nbsp;First Reading: <a href=' . $first_reading_link . ' target="_blank">' . '$first_reading_link' . '</a><br>';
-						echo '&nbsp;&nbsp;&nbsp;Second Reading: <a href=' . $second_reading_link . ' target="_blank">' . '$second_reading_link["title"]' . '</a><br>';
-						echo '&nbsp;&nbsp;&nbsp;Gospel Reading: <a href=' . $gospel_link . ' target="_blank">' . '$gospel_link["title"]' . '</a><br><br>';
+						echo '&nbsp;&nbsp;&nbsp;Second Reading: <a href=' . $second_reading_link . ' target="_blank">' . '$second_reading_link' . '</a><br>';
+						echo '&nbsp;&nbsp;&nbsp;Gospel Reading: <a href=' . $gospel_link . ' target="_blank">' . '$gospel_link' . '</a><br><br>';
 					}
 
-					// add_sermon_buttons();
-					echo 'add_sermon_buttons';
-					var_dump($sermon_audio_link);
-					if ( $sermon_audio_link ) {
-						echo '<a href="' . $sermon_audio_link . '" class="post-type-archive-sermons button">Sermon Audio</a>';
+					// add_sermon_media files
+					if ( $sermon_audio ) {
+						echo '<p><strong>Sermon Audio: </strong>';
+						$files = rwmb_meta( 'sermon_audio' );
+						foreach ( $files as $file ) : ?>
+							<a href="<?= $file['url']; ?>"><?= $file['name']; ?></a>
+						<?php endforeach;
+						echo '</p>';
 					}
-					if ( rwmb_get_value(  'sermon_audio_link_new' ) ) {
-						echo '<a href="' . rwmb_get_value(  'sermon_audio_link_new' ) . '" class="post-type-archive-sermons button">Sermon Audio</a>';
+					if ( $sermon_video ) {
+						echo '<p><strong>Sermon Video: </strong>';
+						$videos = rwmb_meta( 'sermon_video' ) ?>
+						<?php foreach ( $videos as $video ) : ?>
+								<?php
+								echo $video['title'];
+								echo '</p>';
+								echo wp_video_shortcode( [
+									'src'    => $video['src'],
+									'width'  => $video['dimensions']['width'],
+									'height' => $video['dimensions']['height'],	
+									'poster' => $video['thumb']['src'],	
+								] );
+								?>
+						<?php endforeach ?>
+					<?php
 					}
-					if ( rwmb_get_value(  'sermon_video_link' ) ) {
-						echo '<a href="' . rwmb_get_value(  'sermon_video_link' ) . '" class="button">Sermon Video</a>';
-					}
+
 				echo '</div>';
 
 			}

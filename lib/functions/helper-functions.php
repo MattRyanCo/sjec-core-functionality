@@ -1,89 +1,14 @@
 <?php
 
-//namespace capweb;
-
-function display_custom_sermon_fields() {
-	?><h3>Getting sermon fields</h3><?php
-	$speaker = rwmb_get_value(  'speaker' );
-	$sermon_topic = rwmb_get_value(  'sermon_topic' );
-	$sermon_delivery_date = rwmb_get_value(  'sermon_delivery_date' );
-	$first_reading_link = rwmb_get_value(  'first_reading_link' );
-	$second_reading_link = rwmb_get_value(  'second_reading_link' );
-	$gospel_link = rwmb_get_value(  'gospel_link' );
-	$sermon_audio_link = rwmb_get_value(  'sermon_audio_link' );
-	$sermon_audio_link_new = rwmb_get_value(  'sermon_audio_link_new' );
-
-	$sermon_video_link = rwmb_get_value(  'sermon_video_link' );
-
-	if ( $speaker || $sermon_topic || $sermon_delivery_date || $sermon_audio_link  || $sermon_audio_link_new  || $sermon_video_link  ) {
-
-		echo '<div class="sermon-meta">';
-
-			if ( $speaker ) {
-				echo '<p><strong>Speaker</strong>: ' . $speaker . '</p>';
-			}
-
-			if ( $sermon_topic ) {
-				echo '<p><strong>Topic</strong>: ' . $sermon_topic . '</p>';
-			}
-
-			if ( $sermon_delivery_date ) {
-				echo '<p><strong>Date Delivered</strong>: ' . substr($sermon_delivery_date,4,2) . '/' . substr($sermon_delivery_date,6,2) . '/' . substr($sermon_delivery_date,0,4) . '</p>';
-			}
-
-			if ( $first_reading_link|| $second_reading_link || $gospel_link ) {
-				echo '<strong>Appointed Passages: </strong>' . '<br>';
-				echo '&nbsp;&nbsp;&nbsp;First Reading: <a href=' . $first_reading_link["url"] . ' target="_blank">' . $first_reading_link["title"] . '</a><br>';
-				echo '&nbsp;&nbsp;&nbsp;Second Reading: <a href=' . $second_reading_link["url"] . ' target="_blank">' . $second_reading_link["title"] . '</a><br>';
-				echo '&nbsp;&nbsp;&nbsp;Gospel Reading: <a href=' . $gospel_link["url"] . ' target="_blank">' . $gospel_link["title"] . '</a><br><br>';
-			}
-
-			add_sermon_buttons();
-		echo '</div>';
-
-	}
-}
-
-
-
-function display_sermon_featured_image() {
-	$image_args = array(
-		'size' => 'medium',
-		'attr' => array(
-			'class' => 'alignright',
-		),
-	);
-
-	// $image = genesis_get_image( $image_args );
-	$image = wp_get_attachment_image( $image_args );
-
-	if ( $image ) {
-		echo '<a href="' . get_permalink() . '">' . $image .'</a>';
-	}
-
-}
-
-function add_sermon_buttons() {
-	if ( rwmb_get_value(  'sermon_audio_link' ) ) {
-		echo '<a href="' . rwmb_get_value(  'sermon_audio_link' ) . '" class="post-type-archive-sermons button">Sermon Audio</a>';
-	}
-	if ( rwmb_get_value(  'sermon_audio_link_new' ) ) {
-		echo '<a href="' . rwmb_get_value(  'sermon_audio_link_new' ) . '" class="post-type-archive-sermons button">Sermon Audio</a>';
-	}
-	if ( rwmb_get_value(  'sermon_video_link' ) ) {
-		echo '<a href="' . rwmb_get_value(  'sermon_video_link' ) . '" class="button">Sermon Video</a>';
-	}
-
-}
-
 function display_recent_sermons() {
     // Define the query parameters
+
     $args = array(
         'post_type' => 'sermons',
         'posts_per_page' => -1, // Display all sermons
-        'date_query' => array(
-            'after' => '1 year ago', // Show posts published after 1 year ago
-        ),
+        // 'date_query' => array(
+        //     'after' => '1 year ago', // Show posts published after 1 year ago
+        // ),
     );
     // Query the posts
     $sermon_query = new WP_Query($args);
@@ -104,4 +29,33 @@ function display_recent_sermons() {
     } else {
         echo 'No sermons found.';
     }
+}
+
+ 
+/**
+ * [Dashboard] Add Liturgical Season Taxonomy to columns at http://example.com/wp-admin/edit.php?post_type=sermons
+ * URL: http://make.wordpress.org/core/2012/12/11/wordpress-3-5-admin-columns-for-custom-taxonomies/
+ */
+
+add_filter( 'manage_taxonomies_for_sermons_columns', 'sermons_columns' );
+function sermons_columns( $taxonomies ) {
+
+	$taxonomies[] = 'liturgical-season';
+	$taxonomies[] = 'series';
+	return $taxonomies;
+
+}
+
+//* [All Sermon pages] Function to display values of custom fields (if not empty)
+
+// [All Sermon pages] Show custom taxonomy (ie. Liturgical Season, Series)
+//	terms for Sermon CPT single pages, archive page and Liturgical Season taxonomy term pages
+add_filter( 'kadence_single_before_entry_content', 'add_custom_sermon_post_meta' );
+function add_custom_sermon_post_meta( $post_meta ) {
+
+	if ( is_singular( 'sermons' ) || is_post_type_archive( 'sermons' ) ||  is_tax( 'liturgical-season' ) || is_tax( 'series' ) ) {
+			$post_meta = '[post_terms taxonomy="liturgical-season" before="Liturgical Season: "]<br> 	[post_terms taxonomy="series" before="Sermon Series: "]';
+	}
+	return $post_meta;
+
 }
