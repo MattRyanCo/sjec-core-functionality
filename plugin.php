@@ -34,9 +34,10 @@ include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/general.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/helper-functions.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-expiration-helper.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/last-login.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/duplicate-post.php' );
 
 // Post Types
-// include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
+include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/post-types.php' );
 include_once( CORE_FUNCTIONALITY_PLUGIN_DIR . 'lib/functions/sermon-cpt.php' );
 
 // TGMPA library and related for Metabox.io
